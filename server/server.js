@@ -35,10 +35,9 @@ app.use(express.static(static)); // set the static files location
 app.get('/', function(req, res) { // basic route to display landing
     res.sendFile(path.join(static, 'src/index.html'));
 });
-app.use('/api', require('server/apis/auth.api')); //configure app routes for api calls
-app.use('/api', require('server/apis/message.api'));
-app.use('/api/resume', require('server/apis/authentication')); // authenticated routes
-app.use('/api', require('server/apis/resume.api')); // authenticated routes
+app.use('/api/auth', require('server/apis/auth.api')); //configure app routes for api calls
+app.use('/api/message', require('server/apis/message.api'));
+app.use('/api/resume', require('server/apis/resume.api')); // authenticated routes
 
 var port = process.env.PORT || config.server.listenPort; // set our port
 app.listen(port); // start app 	

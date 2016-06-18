@@ -6,7 +6,7 @@ var Message = require('server/models/message');
 
 var api = express.Router();
 
-api.post('/message/save', function(req, res) { // add user message to db
+api.post('/save', function(req, res) { // add user message to db
     var message = new Message({
         name: req.body.name,
         email: req.body.email,
