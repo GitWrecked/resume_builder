@@ -8,7 +8,7 @@ var config = require('server/config');
 
 var api = express.Router();
 
-api.post('/auth/register', function(req, res) { // takes in user details, save if email doesn't already exist
+api.post('/register', function(req, res) { // takes in user details, save if email doesn't already exist
     var newUser = new User({
         email: req.body.email,
         password: req.body.password
@@ -34,7 +34,7 @@ api.post('/auth/register', function(req, res) { // takes in user details, save i
     });
 });
 
-api.post('/auth/login', function(req, res) { // takes in user credentials, throw err if user doesn't exist
+api.post('/login', function(req, res) { // takes in user credentials, throw err if user doesn't exist
     User.findOne({
             email: req.body.email,
             password: req.body.password
