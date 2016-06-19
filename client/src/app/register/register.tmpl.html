@@ -25,12 +25,11 @@
                 </md-input-container>
                 <md-input-container class="md-block wow fadeInUp" data-wow-delay=".2s">
                     <label>Confirm Password</label>
-                    <input name="confirmPassword" ng-model="user.confirmPassword" type="password" ng-minlength="3" ng-pattern="{{user.password}}" required>
+                    <input name="confirmPassword" ng-model="user.confirmPassword" type="password" ng-pattern="{{user.password}}" required>
                     <md-icon md-font-icon="fa fa-unlock-alt"></md-icon>
                     <div ng-messages="formRegister.confirmPassword.$error" ng-show="formRegister.confirmPassword.$touched">
-                        <p ng-message="minlength">Password confirm your password!</p>
-                        <p ng-message="pattern">Passwords do not match!</p>
                         <p ng-message="required">Password confirm your password!</p>
+                        <p ng-message="pattern">Passwords do not match!</p>
                     </div>
                 </md-input-container>
             </div>
