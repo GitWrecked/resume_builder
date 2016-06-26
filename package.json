@@ -12,7 +12,7 @@
     "test": "gulp ci",
     "prestart": "npm install",
     "start": "node server/server",
-    "postinstall": "bower install"
+    "postinstall": "./node_modules/bower/bin/bower --allow-root install"
   },
   "author": "gitwrecked",
   "license": "ISC",
@@ -49,7 +49,7 @@
     "jshint": "2.9.2",
     "jshint-html-reporter": "0.2.4",
     "jshint-stylish": "2.2.0",
-    "karma": "0.13.22",
+    "karma": "~0.12.0",
     "karma-chrome-launcher": "1.0.1",
     "karma-firefox-launcher": "1.0.0",
     "karma-html-reporter": "0.2.7",
