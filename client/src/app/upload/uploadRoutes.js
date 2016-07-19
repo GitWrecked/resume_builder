@@ -6,7 +6,8 @@ angular.module('rbApp').config([
         $stateProvider
             .state('upload', {
                 url: '/upload',
-                templateUrl: 'src/app/upload/uploadTmpl.html'
+                templateUrl: 'src/app/upload/uploadTmpl.html',
+                authenticate: true
             });
     }
 ]);

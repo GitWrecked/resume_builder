@@ -6,7 +6,8 @@ angular.module('rbApp').config([
         $stateProvider
             .state('messages', {
                 url: '/messages',
-                templateUrl: 'src/app/messages/messagesTmpl.html'
+                templateUrl: 'src/app/messages/messagesTmpl.html',
+                admin: true
             });
     }
 ]);

@@ -15,7 +15,7 @@ angular.module('rbApp').controller('registerCtrl', [
                     $scope.message = res.data.msg;
                     if (res.data.success) {
                         $scope.registered = true;
-                        $state.go('actions');
+                        $state.transitionTo('actions');
                     }
                     $scope.registering = false;
                 });

@@ -6,7 +6,8 @@ angular.module('rbApp').config([
         $stateProvider
             .state('actions', {
                 url: '/actions',
-                templateUrl: 'src/app/actions/actionsTmpl.html'
+                templateUrl: 'src/app/actions/actionsTmpl.html',
+                authenticate: true
             });
     }
 ]);

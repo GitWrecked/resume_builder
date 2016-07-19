@@ -47,7 +47,22 @@ angular.module('rbApp').factory('authSvc', [
             logout: function() {
                 currentUser = {};
                 $cookies.remove('currentUser');
-
+            },
+            isAuthenticated: function() {
+                try {
+                    currentUser = JSON.parse($cookies.get('currentUser'));
+                    return currentUser ? true : false;
+                } catch (err) {
+                    return false;
+                }
+            },
+            isAdmin: function() {
+                try {
+                    currentUser = JSON.parse($cookies.get('currentUser'));
+                    return currentUser.admin ? true : false;
+                } catch (err) {
+                    return false;
+                }
             }
         };
     }

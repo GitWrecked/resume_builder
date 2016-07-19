@@ -6,7 +6,8 @@ angular.module('rbApp').config([
         $stateProvider
             .state('users', {
                 url: '/users',
-                templateUrl: 'src/app/users/usersTmpl.html'
+                templateUrl: 'src/app/users/usersTmpl.html',
+                admin: true // protected route for admins only
             });
     }
 ]);

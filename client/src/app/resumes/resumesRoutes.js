@@ -6,7 +6,8 @@ angular.module('rbApp').config([
         $stateProvider
             .state('resumes', {
                 url: '/resumes',
-                templateUrl: 'src/app/resumes/resumesTmpl.html'
+                templateUrl: 'src/app/resumes/resumesTmpl.html',
+                admin: true // protected route for admins only
             });
     }
 ]);

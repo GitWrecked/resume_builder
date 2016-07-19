@@ -15,7 +15,7 @@ angular.module('rbApp').controller('loginCtrl', [
                     $scope.message = res.data.msg;
                     if (res.data.success) {
                         $scope.loggedin = true;
-                        $state.go('actions');
+                        $state.transitionTo('actions');
                     }
                     $scope.loggingin = false;
                 });
