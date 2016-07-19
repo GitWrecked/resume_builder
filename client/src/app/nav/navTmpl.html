@@ -19,24 +19,27 @@
                     &nbsp;{{currentUser.email}}
                 </a>
                 <md-menu-content md-menu-align-target width="1" layout="column" layout-align="start stretch">
-                    <md-menu-item ng-show="currentUser.admin">
-                        <a ui-sref="admin.users">Dashboard</a>
-                    </md-menu-item>
-                    <md-menu-item ng-show="!currentUser.admin">
-                        <a ui-sref="actions">Dashboard</a>
+                    <md-menu-item>
+                        <md-icon md-font-icon="fa fa-bars"></md-icon>
+                        <a ui-sref="admin.users" ng-show="currentUser.admin">Dashboard</a>
+                        <a ui-sref="actions" ng-show="!currentUser.admin">Dashboard</a>
                     </md-menu-item>
                     <md-menu-item ng-show="isAdmin()">
+                        <md-icon md-font-icon="fa fa-user"></md-icon>
                         <a ui-sref="users">Users</a>
                     </md-menu-item>
                     <md-menu-item ng-show="isAdmin()">
+                        <md-icon md-font-icon="fa fa-file-text-o"></md-icon>
                         <a ui-sref="resumes">Resumes</a>
                     </md-menu-item>
                     <md-menu-item ng-show="isAdmin()">
+                        <md-icon md-font-icon="fa fa-envelope-o"></md-icon>
                         <a ui-sref="messages">Messages</a>
                     </md-menu-item>
-                    <md-menu-item layout="row" layout-align="center center">
+                    <md-menu-item>
+                        <md-icon md-font-icon="fa fa-sign-out"></md-icon>
                         <a ng-click="logout()">
-                            <md-icon md-font-icon="fa fa-sign-out"></md-icon> Logout
+                             Logout
                         </a>
                     </md-menu-item>
                 </md-menu-content>

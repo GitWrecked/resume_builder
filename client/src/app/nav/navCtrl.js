@@ -19,15 +19,5 @@ angular.module('rbApp').controller('navCtrl', [
         $scope.isAuthenticated = function() {
             return $scope.currentUser;
         };
-        $scope.actions = [{
-            name: 'Users',
-            sref: 'dashboard'
-        }, {
-            name: 'Resumes',
-            sref: 'resumes'
-        }, {
-            name: 'Messages',
-            sref: 'messages'
-        }];
     }
 ]);
