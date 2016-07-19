@@ -1,3 +1,5 @@
+// admin routes ===================
+// angular routes using ui.router, allows for nested views
 angular.module('rbApp').config([
     '$stateProvider', '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
