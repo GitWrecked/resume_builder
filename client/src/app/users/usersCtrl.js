@@ -1,7 +1,6 @@
-angular.module('rbApp').controller('adminDashboardCtrl', [
-    '$scope', 'userSvc',
-    function($scope, userSvc) {
-
+angular.module('rbApp').controller('usersCtrl', [
+    '$scope', 'authSvc', 'userSvc',
+    function($scope, authSvc, userSvc) {
         getUsers();
 
         function getUsers() {

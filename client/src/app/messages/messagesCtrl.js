@@ -1,4 +1,4 @@
-angular.module('rbApp').controller('adminMsgCtrl', [
+angular.module('rbApp').controller('messagesCtrl', [
     '$scope', 'messageSvc', 'authSvc',
     function($scope, messageSvc, authSvc) {
         var currentUser = authSvc.user();
@@ -6,7 +6,7 @@ angular.module('rbApp').controller('adminMsgCtrl', [
         getMessages();
 
         // Delete message and refresh data
-        $scope.deleteMsg = function(message) {
+        $scope.deleteMessage = function(message) {
             messageSvc.deleteMessage(message._id).then(function(response) {
                 getMessages();
             });

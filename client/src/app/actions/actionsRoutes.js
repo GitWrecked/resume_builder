@@ -7,10 +7,6 @@ angular.module('rbApp').config([
             .state('actions', {
                 url: '/actions',
                 templateUrl: 'src/app/actions/actionsTmpl.html'
-            })
-            .state('admin.actions', {
-                url: '/actions',
-                templateUrl: 'src/app/actions/actionsTmpl.html'
             });
     }
 ]);

@@ -20,10 +20,13 @@
                 </a>
                 <md-menu-content md-menu-align-target width="1" layout="column" layout-align="start stretch">
                     <md-menu-item ng-show="currentUser.admin">
-                        <a ui-sref="dashboard.admin">Dashboard</a>
+                        <a ui-sref="admin.users">Dashboard</a>
                     </md-menu-item>
                     <md-menu-item ng-show="!currentUser.admin">
-                        <a ui-sref="dashboard.user">Dashboard</a>
+                        <a ui-sref="actions">Dashboard</a>
+                    </md-menu-item>
+                    <md-menu-item ng-show="isAdmin()">
+                        <a ui-sref="users">Users</a>
                     </md-menu-item>
                     <md-menu-item ng-show="isAdmin()">
                         <a ui-sref="resumes">Resumes</a>

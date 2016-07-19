@@ -136,12 +136,15 @@ form {
     overflow-wrap: break-word;
 }
 
+#template-resumes,
+#template-messages,
 #template-register,
 #template-login,
 #template-contact {
     width: 100%;
     max-width: 350px;
     margin: auto;
+    overflow-wrap: break-word;
 }
 
 #template-about {

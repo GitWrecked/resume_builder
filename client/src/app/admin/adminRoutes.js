@@ -6,17 +6,17 @@ angular.module('rbApp').config([
                 url: '/admin',
                 templateUrl: 'src/app/admin/adminTmpl.html'
             })
-            .state('admin.dashboard', {
-                url: '/dashboard',
-                templateUrl: 'src/app/admin/dashboard/adminDashboardTmpl.html'
+            .state('admin.users', {
+                url: '/users',
+                templateUrl: 'src/app/users/usersTmpl.html'
             })
             .state('admin.resumes', {
                 url: '/resumes',
-                templateUrl: 'src/app/admin/resumes/adminResumesTmpl.html'
+                templateUrl: 'src/app/resumes/resumesTmpl.html'
             })
             .state('admin.messages', {
                 url: '/messages',
-                templateUrl: 'src/app/admin/messages/adminMessagesTmpl.html'
+                templateUrl: 'src/app/messages/messagesTmpl.html'
             });
     }
 ]);

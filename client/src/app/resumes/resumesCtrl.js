@@ -1,4 +1,4 @@
-angular.module('rbApp').controller('adminResumesCtrl', [
+angular.module('rbApp').controller('resumesCtrl', [
     '$scope', 'resumeSvc', 'authSvc',
     function($scope, resumeSvc, authSvc) {
         var currentUser = authSvc.user();
