@@ -1,44 +1,45 @@
 <!-- use ng-include to add to pages, included in index.html -->
 <md-toolbar id="main-nav" class="md-whiteframe-2dp" layout="row" layout-align="space-around center" ng-controller="navCtrl">
     <div flex="50" layout="row" layout-align="start center" layout-padding>
-        <a ng-click="showActions()">
+        <a ui-sref="actions">
             &lt;RB&gt;
         </a>
         <a ui-sref="about.site">
             <i class="fa fa-fw fa-info-circle"></i>
         </a>
-        <div ng-show="isAuthenticated()">
-            <md-menu id="admin-menu" ng-show="isAdmin()" ng-controller="adminCtrl">
-                <a ng-click="$mdOpenMenu($event)"><i class="fa"></i>Admin</a>
-                <md-menu-content>
-                    <md-menu-item ng-repeat="action in actions">
-                        <a ui-sref="{{action.sref}}"><i class="fa"></i>{{action.name}}</a>
-                    </md-menu-item>
-                </md-menu-content>
-            </md-menu>
-        </div>
     </div>
     <div flex="50" layout="row" layout-align="end center" layout-padding>
         <a ui-sref="login" ng-show="!currentUser.email">
             <i class="fa fa-fw fa-sign-in"></i>&nbsp;Login
         </a>
-        <div ng-show="currentUser.email">
+        <div ng-show="isAuthenticated()">
             <md-menu md-position-mode="target-right target" id="user-menu" md-menu-origin md-offset="60 0">
                 <a md-menu-origin class="md-icon-button" ng-click="$mdOpenMenu($event)">
                     <md-icon md-font-icon="fa fa-fw fa-user"></md-icon>
-                    &nbsp;{{currentUser.email}}
                 </a>
                 <md-menu-content md-menu-align-target width="1" layout="column" layout-align="start stretch">
-                    <md-menu-item ng-show="notifications">
-                        <i class="fa fa-bell"></i>
-                        <span ng-show="notifications > 0" class="notification-count">1</span>
+                    <md-menu-item>
+                        <md-icon md-font-icon="fa fa-bars"></md-icon>
+                        <a ui-sref="admin.users" ng-show="currentUser.admin">Dashboard</a>
+                        <a ui-sref="actions" ng-show="!currentUser.admin">Dashboard</a>
+                    </md-menu-item>
+                    <md-menu-item ng-show="isAdmin()">
+                        <md-icon md-font-icon="fa fa-user"></md-icon>
+                        <a ui-sref="users">Users</a>
+                    </md-menu-item>
+                    <md-menu-item ng-show="isAdmin()">
+                        <md-icon md-font-icon="fa fa-file-text-o"></md-icon>
+                        <a ui-sref="resumes">Resumes</a>
+                    </md-menu-item>
+                    <md-menu-item ng-show="isAdmin()">
+                        <md-icon md-font-icon="fa fa-envelope-o"></md-icon>
+                        <a ui-sref="messages">Messages</a>
                     </md-menu-item>
                     <md-menu-item>
-                        <div layout="row" layout-align="center center">
-                            <a ng-click="logout()">
-                                <md-icon md-font-icon="fa fa-sign-out"></md-icon> Logout
-                            </a>
-                        </div>
+                        <md-icon md-font-icon="fa fa-sign-out"></md-icon>
+                        <a ng-click="logout()">
+                             Logout
+                        </a>
                     </md-menu-item>
                 </md-menu-content>
             </md-menu>

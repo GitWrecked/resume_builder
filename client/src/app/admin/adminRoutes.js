@@ -1,22 +1,28 @@
+// admin routes ===================
+// angular routes using ui.router, allows for nested views
 angular.module('rbApp').config([
     '$stateProvider', '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('admin', {
                 url: '/admin',
-                templateUrl: 'src/app/admin/adminTmpl.html'
+                templateUrl: 'src/app/users/usersTmpl.html',
+                admin: true // protected route for admins only
             })
-            .state('admin.dashboard', {
-                url: '/dashboard',
-                templateUrl: 'src/app/admin/dashboard/adminDashboardTmpl.html'
+            .state('admin.users', {
+                url: '/users',
+                templateUrl: 'src/app/users/usersTmpl.html',
+                admin: true // protected route for admins only
             })
             .state('admin.resumes', {
                 url: '/resumes',
-                templateUrl: 'src/app/admin/resumes/adminResumesTmpl.html'
+                templateUrl: 'src/app/resumes/resumesTmpl.html',
+                admin: true // protected route for admins only
             })
             .state('admin.messages', {
                 url: '/messages',
-                templateUrl: 'src/app/admin/messages/adminMessagesTmpl.html'
+                templateUrl: 'src/app/messages/messagesTmpl.html',
+                admin: true // protected route for admins only
             });
     }
 ]);

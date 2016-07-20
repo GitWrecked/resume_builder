@@ -1,4 +1,7 @@
-angular.module('rbApp').controller('adminResumesCtrl', [
+// resumes controller ===================
+// angular controller to handle resume management, including routes to call backend api
+// front end does not connect to mongo libraries, therefore api routes needed
+angular.module('rbApp').controller('resumesCtrl', [
     '$scope', 'resumeSvc', 'authSvc',
     function($scope, resumeSvc, authSvc) {
         var currentUser = authSvc.user();

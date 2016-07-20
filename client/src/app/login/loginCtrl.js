@@ -2,8 +2,8 @@
 // angular controller to handle user login, including routes to call backend api
 // front end does not connect to mongo libraries, therefore api routes needed
 angular.module('rbApp').controller('loginCtrl', [
-    '$scope', '$state', 'authSvc', '$mdBottomSheet', '$mdToast', '$log',
-    function($scope, $state, authSvc, $mdBottomSheet, $mdToast, $log) {
+    '$scope', '$state', 'authSvc', '$log',
+    function($scope, $state, authSvc, $log) {
         $scope.loggingin = false;
         $scope.loggedin = false;
         $scope.login = function() {
@@ -15,24 +15,11 @@ angular.module('rbApp').controller('loginCtrl', [
                     $scope.message = res.data.msg;
                     if (res.data.success) {
                         $scope.loggedin = true;
-                        $scope.showActions();
+                        $state.transitionTo('actions');
                     }
                     $scope.loggingin = false;
-                    // $state.go('upload');
-                    // $mdToast.show(
-                    //     $mdToast.simple()
-                    //     .textContent('logged in ' + res.data.email + '!')
-                    //     .position('top right')
-                    //     .hideDelay(1500)
-                    // );
                 });
             }, 2000);
-        };
-        $scope.showActions = function() {
-            $mdBottomSheet.show({
-                templateUrl: 'src/app/actions/actionsTmpl.html',
-                clickOutsideToClose: false
-            });
         };
     }
 ]);

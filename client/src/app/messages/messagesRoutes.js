@@ -1,13 +1,13 @@
-// upload routes ===================
+// messages routes ===================
 // angular routes using ui.router, allows for nested views
 angular.module('rbApp').config([
     '$stateProvider', '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
         $stateProvider
-            .state('upload', {
-                url: '/upload',
-                templateUrl: 'src/app/upload/uploadTmpl.html',
-                authenticate: true
+            .state('messages', {
+                url: '/messages',
+                templateUrl: 'src/app/messages/messagesTmpl.html',
+                admin: true
             });
     }
 ]);

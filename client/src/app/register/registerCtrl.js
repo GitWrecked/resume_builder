@@ -2,8 +2,8 @@
 // angular controller to handle user registration, including routes to call backend api
 // front end does not connect to mongo libraries, therefore api routes needed
 angular.module('rbApp').controller('registerCtrl', [
-    '$scope', '$state', 'authSvc', '$mdBottomSheet', '$log',
-    function($scope, $state, authSvc, $mdBottomSheet, $log) {
+    '$scope', '$state', 'authSvc', '$log',
+    function($scope, $state, authSvc, $log) {
         $scope.registering = false;
         $scope.registered = false;
         $scope.register = function() {
@@ -15,17 +15,11 @@ angular.module('rbApp').controller('registerCtrl', [
                     $scope.message = res.data.msg;
                     if (res.data.success) {
                         $scope.registered = true;
-                        $scope.showActions();
+                        $state.transitionTo('actions');
                     }
                     $scope.registering = false;
                 });
             }, 2000);
-        };
-        $scope.showActions = function() {
-            $mdBottomSheet.show({
-                templateUrl: 'src/app/actions/actionsTmpl.html',
-                clickOutsideToClose: false
-            });
         };
     }
 ]);

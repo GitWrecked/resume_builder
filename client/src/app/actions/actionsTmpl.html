@@ -1,8 +1,56 @@
-<md-bottom-sheet id="template-actions" class="md-grid" layout="column" ng-controller="actionsCtrl" ng-cloak>
-    <h4 layout="row" layout-align="center start">Available Actions:</h4>
-    <div layout="column" layout-sm="row" layout-align="center center">
-        <md-button ng-repeat="action in actions" ui-sref="{{action.action}}" ng-click="close()">
-            <md-icon md-font-icon="{{action.icon}}"></md-icon> &nbsp; {{action.name}}
-        </md-button>
-    </div>
-</md-bottom-sheet>
+<!-- template for available user actions, associated controller in same folder -->
+<md-content id="template-actions" layout-padding flex ng-controller="actionsCtrl">
+    <md-grid-list md-cols="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="2" md-row-height-gt-md="1:1" md-row-height="4:3" md-gutter="8px" md-gutter-gt-sm="4px" layout-gt-md="row" layout-md="column" layout="column" layout-align="center center" layout-wrap>
+        <md-card layout="row" layout-align="center center" flex class="md-whiteframe-4dp wow fadeInUp" data-wow-delay="0s">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-title">
+                    	Upload a Resume!
+                    </span>
+                    <span class="md-subhead">
+                    	Upload a resume, we'll process it and send you an email once its ready for review.
+                    </span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-actions layout="column">
+                <md-button class="md-icon-button" aria-label="Upload" href="#/upload">
+                    <md-icon md-font-icon="fa fa-fw fa-upload"></md-icon>
+                </md-button>
+            </md-card-actions>
+        </md-card>
+        <md-card layout="row" layout-align="center center" flex class="md-whiteframe-4dp wow fadeInUp" data-wow-delay=".1s">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-title">
+                    	Review your Resumes!
+                    </span>
+                    <span class="md-subhead">
+                    	We've looked through your resume and added some suggestions, take a look!
+                    </span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-actions layout="column">
+                <md-button class="md-icon-button" aria-label="Review" href="#">
+                    <md-icon md-font-icon="fa fa-fw fa-file-text"></md-icon>
+                </md-button>
+            </md-card-actions>
+        </md-card>
+        <md-card ng-show="currentUser.admin" layout="row" layout-align="center center" flex class="md-whiteframe-4dp wow fadeInUp" data-wow-delay=".2s">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-title">
+                    	Admin Dashboard
+                    </span>
+                    <span class="md-subhead">
+                    	As an Admin user, you can view, edit, and export all user submissions.
+                    </span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-actions layout="column">
+                <md-button class="md-icon-button" aria-label="Admin" href="#/admin/users">
+                    <md-icon md-font-icon="fa fa-fw fa-lock"></md-icon>
+                </md-button>
+            </md-card-actions>
+        </md-card>
+    </md-grid-list>
+</md-content>

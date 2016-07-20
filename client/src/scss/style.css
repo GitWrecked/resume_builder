@@ -56,6 +56,8 @@ form {
 /* custom styles */
 
 #template-actions {
+    width: 100%;
+    margin: auto;
     min-height: 50%;
 }
 
@@ -67,6 +69,11 @@ form {
 #template-actions md-icon,
 #template-actions .md-icon {
     font-size: 20px !important;
+}
+
+#template-actions md-card,
+#template-actions .md-card {
+    width: 400px;
 }
 
 #footer {
@@ -129,12 +136,15 @@ form {
     overflow-wrap: break-word;
 }
 
+#template-resumes,
+#template-messages,
 #template-register,
 #template-login,
 #template-contact {
     width: 100%;
     max-width: 350px;
     margin: auto;
+    overflow-wrap: break-word;
 }
 
 #template-about {
